@@ -140,7 +140,7 @@ spec:
                 stash name: 'testOutput'
             }
             stage('Sonar scan') {
-                unstash : 'testOutput'
+                unstash name: 'testOutput'
                 sh '''#!/bin/bash
 
                 if [[ -z "${SONARQUBE_URL}" ]]; then

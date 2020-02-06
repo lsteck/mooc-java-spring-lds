@@ -137,10 +137,10 @@ spec:
                 sh '''#!/bin/bash
                     ./gradlew test --no-daemon
                 '''
-                stash name: 'testOutput'
+                stash includes: 'build/**/*', name: 'buildoutput'
             }
             stage('Sonar scan') {
-                unstash name: 'testOutput'
+                unstash name: 'buildoutput'
                 sh '''#!/bin/bash
 
                 if [[ -z "${SONARQUBE_URL}" ]]; then

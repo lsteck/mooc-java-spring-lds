@@ -135,7 +135,7 @@ spec:
             }
             stage('Test') {
                 sh '''#!/bin/bash
-                    ./gradlew testClasses --no-daemon
+                    ./gradlew test --no-daemon
                 '''
             }
             stage('Sonar scan') {

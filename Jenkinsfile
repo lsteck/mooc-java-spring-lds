@@ -148,7 +148,9 @@ spec:
                   exit 0
                 fi
 
-                ./gradlew -Dsonar.login=${SONARQUBE_USER} -Dsonar.password=${SONARQUBE_PASSWORD} -Dsonar.host.url=${SONARQUBE_URL} sonarqube
+                ls ./build
+                
+                ./gradlew -Dsonar.login=${SONARQUBE_USER} -Dsonar.password=${SONARQUBE_PASSWORD} -Dsonar.host.url=http://sonarqube.mooc-one-iks-cluster.us-east.containers.appdomain.cloud/ sonarqube
                 '''
             }
         }

@@ -137,9 +137,10 @@ spec:
                 sh '''#!/bin/bash
                     ./gradlew test --no-daemon
                 '''
-                stash name: 'source'
+                stash name: 'testOutput'
             }
             stage('Sonar scan') {
+                unstash : 'testOutput'
                 sh '''#!/bin/bash
 
                 if [[ -z "${SONARQUBE_URL}" ]]; then
@@ -149,7 +150,6 @@ spec:
 
                 ./gradlew -Dsonar.login=${SONARQUBE_USER} -Dsonar.password=${SONARQUBE_PASSWORD} -Dsonar.host.url=${SONARQUBE_URL} sonarqube
                 '''
-                unstash 'source'
             }
         }
         container(name: 'ibmcloud', shell: '/bin/bash') {

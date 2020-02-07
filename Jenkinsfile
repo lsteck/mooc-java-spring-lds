@@ -152,7 +152,7 @@ spec:
 
                 ls ./build/reports/jacoco/test
 
-                ./gradlew -Dsonar.login=${SONARQUBE_USER} -Dsonar.password=${SONARQUBE_PASSWORD} -Dsonar.host.url=http://sonarqube.mooc-one-iks-cluster.us-east.containers.appdomain.cloud/ sonarqube
+                ./gradlew -Dsonar.login=${SONARQUBE_USER} -Dsonar.password=${SONARQUBE_PASSWORD} -Dsonar.host.url=http://sonarqube.mooc-one-iks-cluster.us-east.containers.appdomain.cloud/ -Dsonar.coverage.jacoco.xmlReportsPath= build/reports/jacoco/test/jacocoTestReport.xml sonarqube
                 '''
             }
         }

@@ -148,7 +148,9 @@ spec:
                   exit 0
                 fi
 
-                ls ./build
+                ls ./build/jacoco
+
+                ls ./build/reports/jacoco/test
 
                 ./gradlew -Dsonar.login=${SONARQUBE_USER} -Dsonar.password=${SONARQUBE_PASSWORD} -Dsonar.host.url=http://sonarqube.mooc-one-iks-cluster.us-east.containers.appdomain.cloud/ sonarqube
                 '''

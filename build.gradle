@@ -98,12 +98,13 @@ apply from:   'gradle/build-pact-provider.gradle'
 apply plugin: "org.sonarqube"
 
 ext['junit-jupiter.version']   = '${junitVersion}'
-
+/**
 sonarqube {
     properties {
         property 'sonar.coverage.jacoco.xmlReportsPath', "${rootProject.buildDir}/reports/jacoco/test/jacocoTestReport.xml"
     }
 }
+**/
 
 repositories {
     mavenCentral()

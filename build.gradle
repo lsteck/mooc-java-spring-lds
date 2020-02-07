@@ -102,7 +102,6 @@ ext['junit-jupiter.version']   = '${junitVersion}'
 sonarqube {
     properties {
         property 'sonar.coverage.jacoco.xmlReportsPath', "${rootProject.buildDir}/reports/jacoco/test/jacocoTestReport.xml"
-        property 'sonar.scm.provider', "git"
     }
 }
 

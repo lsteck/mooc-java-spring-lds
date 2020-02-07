@@ -137,10 +137,10 @@ spec:
                 sh '''#!/bin/bash
                     ./gradlew test --no-daemon
                 '''
-                stash includes: 'build/**/*', name: 'buildoutput'
+                //stash includes: 'build/**/*', name: 'buildoutput'
             }
             stage('Sonar scan') {
-                unstash name: 'buildoutput'
+                //unstash name: 'buildoutput'
                 sh '''#!/bin/bash
 
                 if [[ -z "${SONARQUBE_URL}" ]]; then
@@ -149,7 +149,7 @@ spec:
                 fi
 
                 ls ./build
-                
+
                 ./gradlew -Dsonar.login=${SONARQUBE_USER} -Dsonar.password=${SONARQUBE_PASSWORD} -Dsonar.host.url=http://sonarqube.mooc-one-iks-cluster.us-east.containers.appdomain.cloud/ sonarqube
                 '''
             }

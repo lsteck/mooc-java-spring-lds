@@ -148,6 +148,8 @@ spec:
                   exit 0
                 fi
 
+                java --version
+                
                 ls ./build/jacoco
 
                 ls ./build/reports/jacoco/test

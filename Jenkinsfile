@@ -154,8 +154,7 @@ spec:
 
                 ls ./build/reports/jacoco/test
 
-                ./gradlew -Dsonar.login=${SONARQUBE_USER} -Dsonar.password=${SONARQUBE_PASSWORD} -Dsonar.host.url=http://sonarqube.mooc-one-iks-cluster.us-east.containers.appdomain.cloud/ -Dsonar.coverage.jacoco.xmlReportPaths=build/reports/jacoco/test/jacocoTestReport.xml -Dsonar.java.test.binaries=build/classes/java/test sonarqube
-                // ./gradlew -Dsonar.login=${SONARQUBE_USER} -Dsonar.password=${SONARQUBE_PASSWORD} -Dsonar.host.url=http://sonarqube.mooc-one-iks-cluster.us-east.containers.appdomain.cloud/ -Dsonar.jacoco.reportPath=./build/jacoco/test.exec -Dsonar.projectName=lsteck.mooc-java-spring-tese -Dsonar.scm.disabled=true sonarqube
+                ./gradlew -Dsonar.login=${SONARQUBE_USER} -Dsonar.password=${SONARQUBE_PASSWORD} -Dsonar.host.url=http://sonarqube.mooc-one-iks-cluster.us-east.containers.appdomain.cloud/ -Dsonar.coverage.jacoco.xmlReportPaths=build/reports/jacoco/test/jacocoTestReport.xml -Dsonar.sources=src/main/java -Dsonar.jacoco.reportPath=build/jacoco/test.exec -Dsonar.junit.reportsPath=build/test-results/test -Dsonar.java.test.binaries=build/classes/test -Dsonar.java.binaries=build/classes/java/main -Dsonar.binaries=build/classes sonarqube
 
                 cat ./build/reports/jacoco/test/jacocoTestReport.xml
                 '''
